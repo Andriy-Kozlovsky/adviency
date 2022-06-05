@@ -1,5 +1,10 @@
-import "./styles.css";
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
 
-export default function App() {
-  return (<div className="App" > <h1>Regalos:</h1> <ul> <li>...</li> </ul> </div>);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
