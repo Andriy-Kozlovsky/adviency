@@ -2,68 +2,70 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'plugin:prettier/recommended',
-    'plugin:react-hooks/recommended',
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended",
   ],
-  parser: '@typescript-eslint/parser',
+  plugins: ["react", "prettier", "import", "@typescript-eslint"],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 12,
-    sourceType: 'module',
+    sourceType: "module",
   },
-  plugins: ['react', 'prettier', 'import', '@typescript-eslint'],
   settings: {
     react: {
-      version: 'detect',
+      version: "detect",
     },
   },
   rules: {
-    'prettier/prettier': [
-      'error',
+    "no-console": "warn",
+    "react/prop-types": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": [
+      "warn",
       {
         printWidth: 100,
-        singleQuote: true,
+        trailingComma: "all",
         tabWidth: 2,
         semi: true,
-        bracketSameLine: true,
-        arrowParens: 'always',
-        htmlWhitespaceSensitivity: 'strict',
-        trailingComma: 'all',
-        endOfLine: 'auto',
+        singleQuote: false,
+        bracketSpacing: false,
+        arrowParens: "always",
+        endOfLine: "auto",
       },
     ],
-    'no-console': 'warn',
-    'react/prop-types': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'warn',
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
       {
-        args: 'after-used',
+        args: "after-used",
         ignoreRestSiblings: false,
-        argsIgnorePattern: '^_.*?$',
+        argsIgnorePattern: "^_.*?$",
       },
     ],
-    'import/order': [
-      'warn',
+    "import/order": [
+      "warn",
       {
-        groups: ['type', 'builtin', 'object', 'external', 'internal', 'parent', 'sibling', 'index'],
+        groups: ["type", "builtin", "object", "external", "internal", "parent", "sibling", "index"],
         pathGroups: [
           {
-            pattern: '~/**',
-            group: 'external',
-            position: 'after',
+            pattern: "~/**",
+            group: "external",
+            position: "after",
           },
         ],
-        'newlines-between': 'always',
+        "newlines-between": "always",
       },
     ],
-    'react/self-closing-comp': 'warn',
-    'react/jsx-sort-props': [
-      'warn',
+    "react/self-closing-comp": "warn",
+    "react/jsx-sort-props": [
+      "warn",
       {
         callbacksLast: true,
         shorthandFirst: true,
@@ -71,11 +73,11 @@ module.exports = {
         reservedFirst: true,
       },
     ],
-    'padding-line-between-statements': [
-      'warn',
-      { blankLine: 'always', prev: '*', next: 'return' },
-      { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
-      { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
+    "padding-line-between-statements": [
+      "warn",
+      {blankLine: "always", prev: "*", next: "return"},
+      {blankLine: "always", prev: ["const", "let", "var"], next: "*"},
+      {blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"]},
     ],
   },
 };
