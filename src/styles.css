@@ -1,10 +1,66 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+.App {
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+  background-image: url('./images/fondo-navidad.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px 40px;
+}
+
+h1 {
+  font-family: 'Mountains of Christmas', cursive;  
+  text-align: center;
+}
+
+form {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  background-color: red;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+  padding: 5px 10px;
+  border: 1.6px solid gray;
+}
+
+input:focus {
+  border: 1.6px solid red;
+}
+
+ul {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
 }
