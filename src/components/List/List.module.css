@@ -1,0 +1,22 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.img {
+  height: 32px;
+  width: 32px;
+}
+
+li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  min-width: 220px;
+}
+
+.btnClose {
+  margin-left: auto;
+}
