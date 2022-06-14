@@ -1,0 +1,29 @@
+.ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.li img {
+  width: 48px; 
+  height: 48px;
+}
+
+.li button {
+  margin-left: auto;
+}
+
+.li span {
+  font-size: 14px;
+  color: gray;
+}
+
+.emptyList {
+  color: gray;
+}

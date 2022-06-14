@@ -1,0 +1,38 @@
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+form {
+  z-index: 2;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 40px;
+  min-width: 300px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+input {
+  outline: none;
+  padding: 8px;
+  border: 1.5px solid rgba(128, 128, 128, 0.6);
+}
+
+input:focus {
+  border: 1.5px solid crimson;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
