@@ -23,3 +23,23 @@
   flex-direction: column;
   gap: 14px;
 }
+
+button {
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(221, 220, 220);
+}
+
+.btn-primary {
+  background-color: crimson;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: red;
+}

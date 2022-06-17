@@ -73,7 +73,9 @@ export default function App() {
     <div className="App">
       <div className="container">
         <h1>Regalos:</h1>
-        <button onClick={() => formHandler(true)}>Agregar regalo</button>
+        <button className="btn-primary" onClick={() => formHandler(true)}>
+          Agregar regalo
+        </button>
         {openedForm && (
           <Form closeForm={formHandler} itemToEdit={itemToEdit} onSubmit={submitHandler} />
         )}

@@ -20,3 +20,13 @@
   display: flex;
   flex-direction: column;
 }
+
+.list span {
+  color: gray;
+  font-size: 14px;
+}
+
+.list img {
+  width: 32px;
+  height: 32px;
+}

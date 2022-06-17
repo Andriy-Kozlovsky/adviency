@@ -24,16 +24,19 @@ const Form = ({
   };
 
   return (
-    <form className={styles.form} onSubmit={submitHandler}>
-      <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
-      <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-      <input type="text" value={image} onChange={(e) => setImage(e.target.value)} />
-      <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} />
-      <button>Agregar</button>
-      <button type="button" onClick={() => closeForm(false)}>
-        Cerrar
-      </button>
-    </form>
+    <>
+      <div className={styles.overlay} />
+      <form className={styles.form} onSubmit={submitHandler}>
+        <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+        <input type="text" value={image} onChange={(e) => setImage(e.target.value)} />
+        <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} />
+        <button className="btn-primary">Agregar</button>
+        <button type="button" onClick={() => closeForm(false)}>
+          Cerrar
+        </button>
+      </form>
+    </>
   );
 };
 
