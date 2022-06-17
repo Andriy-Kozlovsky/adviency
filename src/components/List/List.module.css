@@ -1,0 +1,22 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.buttons-container {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
