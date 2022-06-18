@@ -32,24 +32,27 @@ const Form = ({
   };
 
   return (
-    <form className={styles.form} onSubmit={submitHandler}>
-      <input type="text" value={text} onChange={(e) => onChange(e.target.value, "text")} />
-      <input type="text" value={name} onChange={(e) => onChange(e.target.value, "name")} />
-      <input type="text" value={image} onChange={(e) => onChange(e.target.value, "image")} />
-      <input
-        type="number"
-        value={amount}
-        onChange={(e) => onChange(e.target.value.toString(), "amount")}
-      />
-      <div>
-        <button type="button" onClick={(e) => submitHandler(e)}>
-          Cerrar
-        </button>
-        <button className="btn-primary" type="submit">
-          Guardar
-        </button>
-      </div>
-    </form>
+    <>
+      <div className={styles.overlay} />
+      <form className={styles.form} onSubmit={submitHandler}>
+        <input type="text" value={text} onChange={(e) => onChange(e.target.value, "text")} />
+        <input type="text" value={name} onChange={(e) => onChange(e.target.value, "name")} />
+        <input type="text" value={image} onChange={(e) => onChange(e.target.value, "image")} />
+        <input
+          type="number"
+          value={amount}
+          onChange={(e) => onChange(e.target.value.toString(), "amount")}
+        />
+        <div>
+          <button type="button" onClick={(e) => submitHandler(e)}>
+            Cerrar
+          </button>
+          <button className="btn-primary" type="submit">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </>
   );
 };
 
