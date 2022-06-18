@@ -1,16 +1,22 @@
 import {useEffect, useState} from "react";
 
 import {ListItem, initialState} from "../models";
+import {api} from "../api/api";
 
 const useApp = () => {
   // @ts-ignore
-  const [list, setList] = useState<ListItem[]>(JSON.parse(localStorage.getItem("list")));
+  const [list, setList] = useState<ListItem[]>([]);
   const [openedForm, setOpenedForm] = useState(false);
   const [itemToEdit, setItemToEdit] = useState<ListItem>(initialState);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    localStorage.setItem("list", JSON.stringify(list));
-  }, [list]);
+    setLoading(true);
+    api().then((result: any) => {
+      setList(result);
+      setLoading(false);
+    });
+  }, []);
 
   const getObjHandler = (obj: ListItem) => {
     if (obj.text === "") {
@@ -71,6 +77,7 @@ const useApp = () => {
     editItem,
     resetItemToEdit,
     itemToEdit,
+    loading,
   };
 };
 

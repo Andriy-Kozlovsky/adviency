@@ -14,6 +14,7 @@ export default function App() {
     resetItemToEdit,
     itemToEdit,
     editItem,
+    loading,
   } = useApp();
 
   return (
@@ -22,7 +23,11 @@ export default function App() {
       <button className="btn-primary" onClick={() => openForm()}>
         Agregar regalo
       </button>
-      <List editItem={editItem} list={list} removeItem={removeItem} />
+      {loading ? (
+        <p>Cargando...</p>
+      ) : (
+        <List editItem={editItem} list={list} removeItem={removeItem} />
+      )}
       <button onClick={() => clearList()}>Borrar todo</button>
       {openedForm && (
         <Form itemToEdit={itemToEdit} resetItemToEdit={resetItemToEdit} sendObj={getObjHandler} />
