@@ -19,3 +19,7 @@
   color: gray;
   font-size: 14px;
 }
+
+.ul button:first-of-type {
+  margin-left: auto;
+}

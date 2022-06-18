@@ -1,20 +1,34 @@
 import {ListItem} from "../../models";
-import useForm from "../../hooks/use-form";
+import useFormInputs from "../../hooks/use-form-inputs";
 
 import styles from "./Form.module.css";
 
-const Form = ({sendObj}: {sendObj: (obj: ListItem) => void}) => {
-  const {text, name, image, amount, onChange} = useForm();
+const Form = ({
+  sendObj,
+  itemToEdit,
+  resetItemToEdit,
+}: {
+  sendObj: (obj: ListItem) => void;
+  itemToEdit: ListItem;
+  resetItemToEdit: () => void;
+}) => {
+  const {text, name, image, amount, onChange, resetValues} = useFormInputs(itemToEdit);
 
   const submitHandler = (e: any) => {
     e.preventDefault();
-    sendObj({
-      text,
-      name,
-      image,
-      amount,
-      id: Math.random(),
-    });
+    if (e.target.localName === "button") {
+      sendObj({text: "", name: "", image: "", amount: 1, id: 0});
+    } else {
+      sendObj({
+        text,
+        name,
+        image,
+        amount,
+        id: Math.random(),
+      });
+    }
+    resetItemToEdit();
+    resetValues();
   };
 
   return (
@@ -28,7 +42,9 @@ const Form = ({sendObj}: {sendObj: (obj: ListItem) => void}) => {
         onChange={(e) => onChange(e.target.value.toString(), "amount")}
       />
       <div>
-        <button type="button">Cerrar</button>
+        <button type="button" onClick={(e) => submitHandler(e)}>
+          Cerrar
+        </button>
         <button className="btn-primary" type="submit">
           Guardar
         </button>

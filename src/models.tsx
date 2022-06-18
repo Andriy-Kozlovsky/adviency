@@ -5,3 +5,11 @@ export interface ListItem {
   image: string;
   amount: number;
 }
+
+export const initialState = {
+  id: 0,
+  text: "",
+  name: "",
+  image: "",
+  amount: 1,
+};
