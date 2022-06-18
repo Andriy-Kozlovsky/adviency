@@ -2,7 +2,15 @@ import {ListItem} from "../../models";
 
 import styles from "./List.module.css";
 
-const List = ({list}: {list: ListItem[]}) => {
+const List = ({
+  list,
+  removeItem,
+  editItem,
+}: {
+  list: ListItem[];
+  removeItem: (id: number) => void;
+  editItem: (id: number) => void;
+}) => {
   return (
     <ul className={styles.ul}>
       {list.map((item) => (
@@ -12,8 +20,8 @@ const List = ({list}: {list: ListItem[]}) => {
             {item.text}
             <span>{item.name}</span>
           </p>
-          ({item.amount})<button>E</button>
-          <button>X</button>
+          ({item.amount})<button onClick={() => editItem(item.id)}>E</button>
+          <button onClick={() => removeItem(item.id)}>X</button>
         </li>
       ))}
     </ul>
