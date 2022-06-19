@@ -44,13 +44,23 @@ const FormModal = ({open, handleClose}: {open: boolean; handleClose: () => void}
   return (
     <Modal open={open} onClose={handleClose}>
       <Stack noValidate autoComplete="off" component="form" spacing={1} sx={style}>
-        <TextField
-          id="gift"
-          label="Regalo"
-          value={form.gift}
-          variant="standard"
-          onChange={changeGift}
-        />
+        <Stack direction="row">
+          <TextField
+            id="gift"
+            label="Regalo"
+            value={form.gift}
+            variant="standard"
+            onChange={changeGift}
+          />
+          <Button
+            size="small"
+            sx={{alignSelf: "flex-end"}}
+            variant="outlined"
+            onClick={() => dispatch(formActions.randomGift())}
+          >
+            Sorpréndeme!
+          </Button>
+        </Stack>
         <TextField
           id="name"
           label="Destinatario"

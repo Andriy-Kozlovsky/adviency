@@ -38,6 +38,12 @@ const formSlice = createSlice({
       state.amount = action.payload.amount;
       state.id = action.payload.id;
     },
+    randomGift(state) {
+      const gifts = ["Medias", "Vitel Tone", "Caramelos", "Juguete", "Remera"];
+      const newGift = gifts[Math.floor(Math.random() * gifts.length)];
+
+      state.gift = newGift;
+    },
   },
 });
 
