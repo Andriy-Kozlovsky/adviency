@@ -1,14 +1,15 @@
-import React from "react";
-
-import "./styles.css";
+import Button from "./components/Button";
+import Form from "./components/Form";
+import List from "./components/List";
 
 export default function App() {
   return (
     <div className="App">
       <h1>Regalos:</h1>
-      <ul>
-        <li>...</li>
-      </ul>
+      <Button primary>Agregar regalo</Button>
+      <List />
+      <Button primary={false}>Borrar todo</Button>
+      <Form />
     </div>
   );
 }
